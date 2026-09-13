@@ -1,0 +1,66 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap");
+
+@theme {
+  --font-display: "Fraunces", "Times New Roman", serif;
+  --font-sans: "Figtree", "Segoe UI", system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --color-bg: #121110;
+  --color-surface: #1c1a17;
+  --color-elevated: #26231f;
+  --color-fg: #e8e0d4;
+  --color-muted: #9a9286;
+  --color-subtle: #6f685e;
+  --color-border: color-mix(in oklab, #e8e0d4 12%, transparent);
+  --color-accent: #8b9a86;
+  --color-accent-fg: #121110;
+  --color-danger: #c45c4a;
+  --color-warn: #c4a46a;
+  --color-ok: #6a9a72;
+  --color-health: #c45c4a;
+  --color-hunger: #c4894a;
+  --color-stamina: #7a9a86;
+  --color-xp: #7eadc4;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  --shadow-panel: 0 12px 40px color-mix(in oklab, #000 45%, transparent);
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  html,
+  body,
+  #app {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
